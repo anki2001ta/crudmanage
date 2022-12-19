@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD:USER MANAGEMENT</title>
+    <style>
+    #view{
+       
+       display:flex;
+        width:100%;
+        height:1800%;
+        border:1px solid green;
+        background-color:rgb(177, 250, 246) ;
+        gap:10px;
+
+    }
+    h1{
+        color:rgb(255, 94, 0);
+       text-align:center ;
+    }
+   #view>#show{
+    display:grid;
+    grid-template-columns: repeat(1,1fr);
+    width:30%;
+    height:200%;
+    border:3px solid blue;
+    gap:20px
+   }
+   #view>#show>input{
+    width:90%;
+    height:24px;
+    color:rgb(243, 242, 248);
+    background-color:rgb(12, 4, 48) ;
+   }
+   #view>#show>button{
+    width:90%;
+    height:30px;
+    color:rgb(9, 7, 43);
+    background-color:white ;
+   }
+   #view>#show>#filter>option{
+    width:90%;
+    height:34px;
+    color:rgb(243, 242, 248);
+    background-color:rgb(12, 4, 48) ;
+   }
+   #view>#container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    width:90%;
+    height:200%;
+    border-left:3px solid rgb(72, 139, 151) ;
+    gap:20px;
+    background-color:rgb(5, 5, 36) ;
+    color:white;
+    
+   }
+   #view>#container>div{
+    width:300px;
+    height:auto;
+    border:3px solid rgb(115, 208, 245);
+    margin:auto;
+   }
+
+    
+    </style>
+</head>
+<body>
+    <h1>CRUD:USER MANAGEMENT</h1>
+    <!-- button for sorting and filtering -->
+    <div id="view">
+    <div id="show">
+    <button onclick="sortLH()">SORT LOW-TO-HIGH</button>
+    <button onclick="sortHL()">SORT HIGH-TO-LOW</button>
+    <input type="text" id="name" placeholder="Enter Name" >
+    <input type="text" id="batch" placeholder="Batch Name">
+    <input type="text" id="course" placeholder="Enter Course Name">
+    <input type="number" id="age" placeholder="Enter Age">
+    <input type="number" id="mobile" placeholder="Enter Mobile Number">
+    <input type="number" id="es" placeholder="Enter Evaluation Score" >
+    <button onclick="addEmployee()">Add Employee</button>
+
+    <select id="filter">
+        <option>SELECT CATEGORY</option>
+        <option value="Course">Course</option>
+        <option value="Age">Age</option>
+        <option value="Batch">BATCH</option>
+        <option value="status">STATUS</option>
+        <option value="id">ID</option>
+    </select>
+    <input type="text" id="fil" placeholder="enter data">
+    <button onclick="fil_data()">FILTER</button>
+
+    <select id="filt" onchange="fillt()">
+        <option value="Course">Course</option>
+        <option value="JS201">JS-201</option>
+        <option  value="JS211">JS-211</option>
+        <option  value="DSA">DSA</option>
+    </select>
+
+
+</div>
+<div id="container"></div>
+</div>
+<button onclick="previous()">PREVIOUS</button>
+<button onclick="next()">NEXT</button>
+</body>
+</html>
+<script src="index.js"></script>
